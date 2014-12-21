@@ -12,7 +12,6 @@ TimeoutStartSec=0
 Environment="HOME=/root"
 ExecStartPre=-/usr/bin/<%= @docker_command %> kill <%= @sanitised_title %>
 ExecStartPre=-/usr/bin/<%= @docker_command %> rm <%= @sanitised_title %>
-ExecStartPre=/usr/bin/<%= @docker_command %> pull <%= @image %>
 ExecStart=/usr/bin/<%= @docker_command %> run \
         <% if @username %>-u '<%= @username %>' <% end %> \
         <% if @hostname %>-h '<%= @hostname %>'<% end %> \
